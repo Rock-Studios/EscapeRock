@@ -4,7 +4,7 @@ public class Jump : MonoBehaviour
 {
     public float jumpForce = 10f;
     public float forwardSpeed = 5f;
-
+    public LayerMask groundLayer;
     private Rigidbody2D rb2D;
     private bool isGrounded;
 
@@ -16,7 +16,7 @@ public class Jump : MonoBehaviour
     void Update()
     {
         // Check for ground detection without using LayerMask
-        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 1.5f);
+        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, groundLayer);
 
         // Jump logic
         if (isGrounded && Input.GetKeyDown(KeyCode.W))
@@ -25,7 +25,9 @@ public class Jump : MonoBehaviour
         }
 
         // Always move forward
-        MoveForward();
+       
+            MoveForward();
+
     }
 
     void MoveForward()
@@ -36,5 +38,9 @@ public class Jump : MonoBehaviour
     void JumpPlayer()
     {
         rb2D.velocity = new Vector2(rb2D.velocity.x, jumpForce);
+
+
+        
+
     }
 }
