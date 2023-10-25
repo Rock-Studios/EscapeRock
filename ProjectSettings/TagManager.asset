@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -12,8 +13,8 @@ TagManager:
   - Water
   - UI
   - Platforms
-  - 
-  - 
+  - Enemies
+  - Player
   - 
   - 
   - 
@@ -52,6 +53,9 @@ TagManager:
     locked: 0
   - name: EnvorimentForegorund
     uniqueID: 2019396569
+    locked: 0
+  - name: Enemy
+    uniqueID: 3800195247
     locked: 0
   - name: Collision
     uniqueID: 4087503949
