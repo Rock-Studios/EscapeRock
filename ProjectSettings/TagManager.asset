@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Boulder
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Platforms
   - Enemies
   - Player
-  - 
+  - Boulder
   - 
   - 
   - 
@@ -59,4 +60,7 @@ TagManager:
     locked: 0
   - name: Collision
     uniqueID: 4087503949
+    locked: 0
+  - name: Boulder
+    uniqueID: 3595836155
     locked: 0
