@@ -4,7 +4,7 @@ using UnityEngine;
 public class GhostPatrol : MonoBehaviour
 {
     public float patrolDistance = 2f; // Distance to move left and right from the starting position
-    public float patrolSpeed = 1f; // Speed of patrol movement
+    public float patrolSpeed = 0.5f; // Speed of patrol movement
 
     private Vector3 leftPoint, rightPoint; // Points to move to
     private Vector3 startingPosition; // Original position of the ghost
@@ -45,7 +45,7 @@ public class GhostPatrol : MonoBehaviour
 
         float distanceCovered, fractionOfJourney;
 
-        while (Vector3.Distance(transform.position, target) > 0.05f)
+        while (Vector3.Distance(transform.position, target) > 0.15f)
         {
             distanceCovered = (Time.time - startTime) * patrolSpeed;
             fractionOfJourney = distanceCovered / journeyLength;

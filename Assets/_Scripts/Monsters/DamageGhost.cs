@@ -1,21 +1,19 @@
 using UnityEngine;
 
-public class DamageGhost : MonoBehaviour
+public class GhostDamage : MonoBehaviour
 {
-    public int damageAmount = 1; // Represents half a heart
+    public int damageAmount = 10;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Check if the colliding object has the "Player" tag
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            /*Player player = collision.gameObject.GetComponent<Player>();
-
-            if (player != null)
+            // Assuming the player has a script with a TakeDamage method
+            PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
             {
-                player.TakeDamage(damageAmount);
-                Debug.Log("Player touched the ghost and lost health!");
-            }*/
+                playerHealth.TakeDamage(damageAmount);
+            }
         }
     }
 }
