@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    public float jumpForce = 10f;
+    public float jumpForce = 40f;
     public float forwardSpeed = 5f;
     public LayerMask groundLayer;
+    public float fallMultiplier = 40f;
+    public float lowJumpMultiplier = 2f;
+
     private Rigidbody2D rb2D;
     private bool isGrounded;
 
@@ -15,19 +18,25 @@ public class Jump : MonoBehaviour
 
     void Update()
     {
-        // Check for ground detection without using LayerMask
+        Debug.DrawRay(transform.position, Vector2.down * 1.5f, Color.red);
+
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, groundLayer);
 
-        // Jump logic
         if (isGrounded && Input.GetKeyDown(KeyCode.W))
         {
             JumpPlayer();
         }
 
-        // Always move forward
-       
-            MoveForward();
+        if (rb2D.velocity.y < 0)
+        {
+            rb2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        }
+        else if (rb2D.velocity.y > 0 && !Input.GetKey(KeyCode.W))
+        {
+            rb2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+        }
 
+        MoveForward();
     }
 
     void MoveForward()
@@ -38,9 +47,5 @@ public class Jump : MonoBehaviour
     void JumpPlayer()
     {
         rb2D.velocity = new Vector2(rb2D.velocity.x, jumpForce);
-
-
-        
-
     }
 }

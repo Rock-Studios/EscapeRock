@@ -23,11 +23,6 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.position;
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            move.y += speed * Time.deltaTime;
-        }
-
         if (Input.GetKey(KeyCode.A))
         {
             move.x -= speed * Time.deltaTime;
