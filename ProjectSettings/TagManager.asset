@@ -64,3 +64,6 @@ TagManager:
   - name: Boulder
     uniqueID: 3595836155
     locked: 0
+  - name: Highscore
+    uniqueID: 2937053691
+    locked: 0
