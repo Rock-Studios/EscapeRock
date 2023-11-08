@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Enemy
   - Boulder
-  - Button
   layers:
   - Default
   - TransparentFX
@@ -18,7 +17,7 @@ TagManager:
   - Enemies
   - Player
   - Boulder
-  - Items
+  - 
   - 
   - 
   - 
@@ -67,7 +66,4 @@ TagManager:
     locked: 0
   - name: Highscore
     uniqueID: 2937053691
-    locked: 0
-  - name: Items
-    uniqueID: 873408113
     locked: 0
