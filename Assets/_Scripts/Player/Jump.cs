@@ -10,14 +10,20 @@ public class Jump : MonoBehaviour
 
     private Rigidbody2D rb2D;
     private bool isGrounded;
+    private Animator anim;  // Reference to the Animator
+
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
+        anim.SetBool("isGrounded", isGrounded); 
+        anim.SetFloat("VerticalVelocity", rb2D.velocity.y); 
+
         Debug.DrawRay(transform.position, Vector2.down * 1.5f, Color.red);
 
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, groundLayer);
