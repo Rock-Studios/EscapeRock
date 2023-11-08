@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2019396569
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 2014213439, guid: 7e986a0dbc11d474daea375b417c292a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -187,7 +187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2787125626921980444}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
