@@ -34,7 +34,9 @@ public class RollingBoulder : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Player hit by boulder");
-            GameOver.instance.EndGame();
+            //GameOver.instance.EndGame();
+            
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

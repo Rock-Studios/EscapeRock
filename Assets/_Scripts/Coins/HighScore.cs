@@ -27,4 +27,5 @@ public class HighScore : MonoBehaviour
     {
         scoreText.text = "HIGHSCORE: " + score;
     }
+
 }

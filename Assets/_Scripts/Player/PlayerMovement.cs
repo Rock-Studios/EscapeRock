@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -23,12 +24,12 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.position;
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             move.x -= speed * Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             move.x += speed * Time.deltaTime;
         }
@@ -64,4 +65,5 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Power Ups:" + powerups);
         }
     }
+
 }
