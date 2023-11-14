@@ -23,6 +23,12 @@ public class HighScore : MonoBehaviour
         UpdateScoreDisplay();
     }
 
+    public void DecreaseScore(int amount)
+    {
+        score -= amount;
+        UpdateScoreDisplay();
+    }
+
     private void UpdateScoreDisplay()
     {
         scoreText.text = "HIGHSCORE: " + score;

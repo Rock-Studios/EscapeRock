@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4530954540803491734}
   - component: {fileID: 5000593934697498502}
   - component: {fileID: 4661663548837336187}
+  - component: {fileID: 597313066149773462}
   m_Layer: 7
   m_Name: Avatar
   m_TagString: Ghost
@@ -163,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ece45dce17985d41b06322918e8c00e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 1
+  ghostSoundClip: {fileID: 8300000, guid: ad7d875dec59bfe418549d34728bf2da, type: 3}
 --- !u!114 &4661663548837336187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +179,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectionRadius: 5
   player: {fileID: 0}
+--- !u!70 &597313066149773462
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304165240048317022}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000019073486, y: -0.00000047683716}
+  m_Size: {x: 0.11999998, y: 0.19}
+  m_Direction: 0
 --- !u!1 &3896093317895878893
 GameObject:
   m_ObjectHideFlags: 0
