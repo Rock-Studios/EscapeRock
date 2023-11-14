@@ -6,36 +6,46 @@ public class PlayerSounds : MonoBehaviour
 {
     private AudioSource audioSource;
 
-    public AudioClip AudioClipPowerUp;
-
-    public AudioClip AudioClipMonster;
-
+    public AudioClip AudioClipCoin;
+    public AudioClip AudioClipGhost;
     public AudioClip AudioClipDie;
 
     private void Awake()
     {
-      audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
-    public void PlayerCollectPowerUp()
+    private void OnCollisionEnter(Collision collision)
     {
-        PlayClip(AudioClipPowerUp);
-    }   
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            PlayerCollectCoin();
+        }
+        else if (collision.gameObject.CompareTag("Ghost"))
+        {
+            PlayerHitGhost();
+        }
+    }
+
+    public void PlayerCollectCoin()
+    {
+        PlayClip(AudioClipCoin);
+    }
 
     public void PlayerDie()
     {
         PlayClip(AudioClipDie);
     }
 
-    public void PlayerHitMonster()
+    public void PlayerHitGhost()
     {
-        PlayClip(AudioClipMonster);
+        PlayClip(AudioClipGhost);
     }
 
     private void PlayClip(AudioClip clip)
     {
         audioSource.Stop();
-        audioSource.clip = clip;  
+        audioSource.clip = clip;
         audioSource.Play();
     }
 }

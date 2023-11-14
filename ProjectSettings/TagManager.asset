@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Boulder
   - Button
+  - Coin
+  - Ghost
   layers:
   - Default
   - TransparentFX
@@ -70,4 +72,7 @@ TagManager:
     locked: 0
   - name: Items
     uniqueID: 873408113
+    locked: 0
+  - name: 
+    uniqueID: 350659737
     locked: 0
