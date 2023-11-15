@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class HighScore : MonoBehaviour
 {
-    // Start is called before the first frame update
     public static HighScore instance;
     public TextMeshProUGUI scoreText;
     private int score = 0;

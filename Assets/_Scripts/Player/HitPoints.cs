@@ -15,7 +15,7 @@ public class HitPoints : MonoBehaviour
 
             if (hitpoints < 0)
             {
-                hitpoints = 0; // Ensure hitpoints don't go below 0.
+                hitpoints = 0;
             }
   
             if (hitpoints <= 0)

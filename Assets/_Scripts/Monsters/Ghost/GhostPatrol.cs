@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class GhostPatrol : MonoBehaviour
 {
-    public float patrolDistance = 2f; // Distance to move left and right from the starting position
-    public float patrolSpeed = 0.5f; // Speed of patrol movement
+    public float patrolDistance = 2f; 
+    public float patrolSpeed = 0.5f; 
 
-    private Vector3 leftPoint, rightPoint; // Points to move to
-    private Vector3 startingPosition; // Original position of the ghost
+    private Vector3 leftPoint, rightPoint; 
+    private Vector3 startingPosition; 
 
     private void Start()
     {
@@ -16,7 +16,7 @@ public class GhostPatrol : MonoBehaviour
         leftPoint = startingPosition + new Vector3(-patrolDistance, 0, 0);
         rightPoint = startingPosition + new Vector3(patrolDistance, 0, 0);
 
-        // Start the patrol coroutine
+  
         StartCoroutine(PatrolRoutine());
     }
 
@@ -24,16 +24,13 @@ public class GhostPatrol : MonoBehaviour
     {
         while (true)
         {
-            // Move to the left point
             yield return MoveToTarget(leftPoint);
 
-            // Wait for a short time
+         
             yield return new WaitForSeconds(0.5f);
 
-            // Move to the right point
             yield return MoveToTarget(rightPoint);
 
-            // Wait for a short time
             yield return new WaitForSeconds(0.5f);
         }
     }

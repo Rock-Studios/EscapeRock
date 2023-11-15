@@ -4,18 +4,18 @@ public class RollingBoulder : MonoBehaviour
 {
     public float speed = 30f;
     private Rigidbody2D rb;
-    private bool isRolling = false; // Add a boolean to control when the boulder starts rolling
+    private bool isRolling = false;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        // Initialize the boulder's velocity to zero
+      
         rb.velocity = Vector2.zero;
     }
 
     private void Update()
     {
-        // If isRolling is true, set the boulder's velocity
+  
         if (isRolling)
         {
             rb.velocity = new Vector2(+speed, 0);
@@ -24,7 +24,7 @@ public class RollingBoulder : MonoBehaviour
 
     public void StartRolling()
     {
-        isRolling = true; // This will be called by the button to start the boulder rolling
+        isRolling = true; 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -34,7 +34,7 @@ public class RollingBoulder : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Player hit by boulder");
-            //GameOver.instance.EndGame();
+       
             
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

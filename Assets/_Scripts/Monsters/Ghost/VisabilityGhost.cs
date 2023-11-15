@@ -10,10 +10,10 @@ public class VisibilityGhost : MonoBehaviour
     private void Start()
     {
         ghostAnimator = GetComponent<Animator>();
-        ghostAnimator.SetBool("Appear", false); // Set initial state
+        ghostAnimator.SetBool("Appear", false);
         GetComponent<SpriteRenderer>().enabled = false;
 
-        // If player is not assigned, try to find it by tag (assuming the player object has the tag "Player")
+      
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
@@ -38,7 +38,6 @@ public class VisibilityGhost : MonoBehaviour
         }
     }
 
-    // This function can be called at the end of the appearance animation
     public void FinishAppearing()
     {
         ghostAnimator.SetBool("Appear", false);
