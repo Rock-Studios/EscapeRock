@@ -22,7 +22,7 @@ public class Jump : MonoBehaviour
         Debug.DrawRay(transform.position, Vector2.down * 1.5f, Color.red);
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, groundLayer);
 
-        if (isGrounded && Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))  //Tilføj isGrounded til de sidste to parametre
+        if (isGrounded && Input.GetKeyDown(KeyCode.W) || isGrounded && Input.GetKey(KeyCode.Space) || isGrounded && Input.GetKey(KeyCode.UpArrow))
         {
             JumpPlayer();
         }
